@@ -2,6 +2,7 @@
 
 /**
  * @desc 构建swoole服务
+ * 哈哈哈哈
  * **/
 $server = new swoole_websocket_server("0.0.0.0",9502);
 $server->on('open', function (swoole_websocket_server $server, $request) {
