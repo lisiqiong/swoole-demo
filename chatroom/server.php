@@ -1,6 +1,8 @@
 <?php
 
-//构建swoole服务
+/**
+ * @desc 构建swoole服务
+ * **/
 $server = new swoole_websocket_server("0.0.0.0",9502);
 $server->on('open', function (swoole_websocket_server $server, $request) {
 	echo "server: handshake success with fd{$request->fd}\n";//$request->fd 是客户端id
