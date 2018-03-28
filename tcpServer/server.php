@@ -10,6 +10,8 @@ $serv->on('connect', function ($serv, $fd) {
 
 //监听数据接收事件
 $serv->on('receive', function ($serv, $fd, $from_id, $data) {
+        print_r($serv);
+        echo "数据接收事件--fd:".$fd.'--from_id:'.$from_id;
             $serv->send($fd, "Server: ".$data);
             });
 
