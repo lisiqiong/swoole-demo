@@ -27,7 +27,8 @@ class server{
      *@desc 连接tcp服务端
      **/
     public function onConnect($serv,$fd,$reactor_id){
-        echo "client id:{$fd} is connect succes!\n";    
+        $content = "客户端id：{$fd} 连接成功";
+        $this->writeLog($content);
     }
 
 
@@ -35,16 +36,51 @@ class server{
      *@desc 收到客户传递的消息 
      **/
     public function onReceive($serv,$fd,$reactor_id,$data){
-        echo "客服传递的数据是：".$data."\n";
-        $serv->send($fd,'发送消息给客户端');
+        $content = "接收的客户端数据为:{$data}";
+        $this->writeLog($content);
+        $test = bin2hex($data);
+        //echo "客服传递的数据是：".$test."\n";
+        
+        //$show = base_convert('abcd',16,2);
+        //$arr = ['a','b','c','d'];
+
+        $sendStr = '01 4D 05 00 01 55 01 00 A5';
+        $res = $this->show($sendStr);
+        $serv->send($fd,$res);
     }
 
+    /***
+     *@desc 写入日志记录信息
+     **/
+    public function writeLog($content){
+        $fileName= date('Ymd').'-ubox-api.log';
+        $file_content = "[".date('Y-m-d H:i:s',time())."]  ";
+        $file_content .= $content."\n";
+        swoole_async_writefile($fileName, $file_content, function($fileName) {
+             //echo "wirte ok.\n";
+        }, FILE_APPEND);
+    }
+
+    /**
+     **@desc 1.十六进制转化为十进制
+     ********2.返回ascii码指定的耽搁字符串
+     ***/
+    public function show($sendStr){
+        $sendStrArray = str_split(str_replace(' ', '', $sendStr), 2);
+        //print_r($sendStrArray);
+        $data = '';
+        for ($j = 0; $j < count($sendStrArray); $j++) {  
+            $data .= chr(hexdec($sendStrArray[$j]));
+        }
+        return $data;
+    }
 
     /**
      *@desc 关闭
      **/
     public function onClose($serv,$fd){
-        echo "Client id:{$fd} is close\n"; 
+        $content = "client id:{$fd} is close!";
+        $this->writeLog($content);
     }
 
 }
