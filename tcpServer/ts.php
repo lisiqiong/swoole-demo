@@ -38,15 +38,17 @@ class server{
     public function onReceive($serv,$fd,$reactor_id,$data){
         $content = "接收的客户端数据为:{$data}";
         $this->writeLog($content);
-        $test = bin2hex($data);
+        //$test = bin2hex($data);
         //echo "客服传递的数据是：".$test."\n";
         
         //$show = base_convert('abcd',16,2);
         //$arr = ['a','b','c','d'];
 
-        $sendStr = '01 4D 05 00 01 55 01 00 A5';
+       /* $sendStr = '01 4D 05 00 01 55 01 00 A5';
         $res = $this->show($sendStr);
-        $serv->send($fd,$res);
+        $serv->send($fd,$res);*/
+
+        //$serv->send($fd,"您发送的消息是：{$data}");
     }
 
     /***
@@ -87,3 +89,7 @@ class server{
 $host = "192.168.0.213";
 $port = 9501;
 new server($host,$port);
+
+
+
+

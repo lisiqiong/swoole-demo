@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+ul.a{list-style-type:circle;}
+ul li{padding:5px;font-size:14px;}
+ul li span{margin-left:120px;}
+ul li a:link {text-decoration:none;} 
+ul li a:visited {text-decoration:none;}
+ul li a:hover {text-decoration:underline;color:#ef1e1e;}
+ul li a:active {text-decoration:underline;}
+</style>
+<div id="msg">
+	<ul class="a" id="showList">
+	</ul>
+</div>
+<input type="text" id="text">
+<input type="submit" value="发送数据" onclick="song()">
+</body>
+<script>
+    var showList = document.getElementById("showList");
+    var wsServer = 'ws://192.168.0.213:9502';
+    //调用websocket对象建立连接：
+    //参数：ws/wss(加密)：//ip:port （字符串）
+    var websocket = new WebSocket(wsServer);
+    //onopen监听连接打开
+    websocket.onopen = function (evt) {
+        //websocket.readyState 属性：
+        websocket.readyState;
+		//msg.innerHTML = websocket.readyState;
+    };
+	
+    function song(){
+        var text = document.getElementById('text').value;
+        document.getElementById('text').value = '';
+        //向服务器发送数据
+        websocket.send(text);
+    }
+	
+    //监听连接关闭
+//    websocket.onclose = function (evt) {
+//        console.log("Disconnected");
+//    };
+		
+    //onmessage 监听服务器数据推送
+    websocket.onmessage = function (evt) {
+		console.log(evt);
+		var htmlStr = '';
+		var jsonObj = JSON.parse(evt.data);
+		for(var i=0;i<=10;i++){
+			htmlStr += '<li><a href="#">'+jsonObj[i]['title']+'</a><span>'+jsonObj[i]['time']+'</span></li>';
+		}
+		showList.innerHTML = htmlStr;
+    };
+	
+//监听连接错误信息
+//    websocket.onerror = function (evt, e) {
+//        console.log('Error occured: ' + evt.data);
+//    };
+
+</script>
+</html>
