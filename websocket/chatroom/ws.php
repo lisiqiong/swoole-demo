@@ -1,6 +1,7 @@
 
 <?php
 
+require('./config.php');
 
 /***
  *@desc websocket类
@@ -31,8 +32,8 @@ class ws{
      *@desc 消息处理
      **/
     public function onMessage($server,$frame){
-        print_r($frame);
-        echo "receive from {$frame->fd}:{$frame->data};opcode,fin{$frame->finish}\n";
+        //print_r($frame);
+        //echo "receive from {$frame->fd}:{$frame->data};opcode,fin{$frame->finish}\n";
         $data = [
             ['title'=>'1雨燕智能ok','time'=>'2018-05-29 09:46:10'],    
             ['title'=>'2雨燕智能ok1','time'=>'2018-05-29 10:26:10'],    
@@ -61,7 +62,7 @@ class ws{
 
 }
 
-$host = "192.168.0.213";
-$port = 9502;
+$host = $config['websocket']['host'];
+$port = $config['websocket']['port'];
 $ws = new ws($host,$port);
 
