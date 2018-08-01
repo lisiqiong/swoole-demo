@@ -10,7 +10,7 @@ $config = [
         "port"=>"3306",
         "user"=>"root",
         "password"=>"devpassword",
-        "database"=>"test",
+        "database"=>"dev_yuyan",
         "charset"=>"utf8",
         "timeout"=>2,//可选链接超时时间
     ]

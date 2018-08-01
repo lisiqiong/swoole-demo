@@ -7,8 +7,8 @@
 <body>
 <style>
 ul.a{list-style-type:circle;}
-ul li{padding:5px;font-size:14px;}
-ul li span{margin-left:120px;}
+ul li{padding:8px;font-size:14px;}
+ul li span{margin-right:300px;}
 ul li a:link {text-decoration:none;} 
 ul li a:visited {text-decoration:none;}
 ul li a:hover {text-decoration:underline;color:#ef1e1e;}
@@ -24,13 +24,12 @@ ul li a:active {text-decoration:underline;}
 <script>
     var showList = document.getElementById("showList");
     var wsServer = 'ws://192.168.0.213:9502';
-    //调用websocket对象建立连接：
-    //参数：ws/wss(加密)：//ip:port （字符串）
     var websocket = new WebSocket(wsServer);
     //onopen监听连接打开
     websocket.onopen = function (evt) {
         //websocket.readyState 属性：
         websocket.readyState;
+        websocket.send('test');
 		//msg.innerHTML = websocket.readyState;
     };
 	
@@ -48,19 +47,20 @@ ul li a:active {text-decoration:underline;}
 		
     //onmessage 监听服务器数据推送
     websocket.onmessage = function (evt) {
-		console.log(evt);
+		console.log('服务器数据推送');
 		var htmlStr = '';
 		var jsonObj = JSON.parse(evt.data);
-		for(var i=0;i<=10;i++){
-			htmlStr += '<li><a href="#">'+jsonObj[i]['title']+'</a><span>'+jsonObj[i]['time']+'</span></li>';
-		}
+        var len = jsonObj.length;
+		for(var i=0;i<len;i++){
+			htmlStr += '<li><a href="#">'+jsonObj[i]['name']+'</a><span>'+jsonObj[i]['create_time']+'</span></li>';
+	   	}
 		showList.innerHTML = htmlStr;
     };
 	
-//监听连接错误信息
-//    websocket.onerror = function (evt, e) {
-//        console.log('Error occured: ' + evt.data);
-//    };
+    //监听连接错误信息
+    websocket.onerror = function (evt, e) {
+        console.log('Error occured: ' + evt.data);
+    };
 
 </script>
 </html>
