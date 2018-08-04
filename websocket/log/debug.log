@@ -1291,4 +1291,100 @@ swoole_websocket_frame Object
 )
 client 126 closed
  client 155 closed
- 
+ 成功连接websocket服务 156
+swoole_websocket_frame Object
+(
+    [fd] => 156
+    [finish] => 1
+    [opcode] => 1
+    [data] => test
+)
+swoole_websocket_frame Object
+(
+    [fd] => 156
+    [finish] => 1
+    [opcode] => 1
+    [data] => 3333
+)
+client 156 closed
+ 成功连接websocket服务 157
+swoole_websocket_frame Object
+(
+    [fd] => 157
+    [finish] => 1
+    [opcode] => 1
+    [data] => test
+)
+client 157 closed
+ 成功连接websocket服务 158
+swoole_websocket_frame Object
+(
+    [fd] => 158
+    [finish] => 1
+    [opcode] => 1
+    [data] => test
+)
+client 158 closed
+ 成功连接websocket服务 159
+swoole_websocket_frame Object
+(
+    [fd] => 159
+    [finish] => 1
+    [opcode] => 1
+    [data] => test
+)
+client 159 closed
+ 成功连接websocket服务 160
+swoole_websocket_frame Object
+(
+    [fd] => 160
+    [finish] => 1
+    [opcode] => 1
+    [data] => test
+)
+client 160 closed
+ 成功连接websocket服务 161
+swoole_websocket_frame Object
+(
+    [fd] => 161
+    [finish] => 1
+    [opcode] => 1
+    [data] => test
+)
+swoole_websocket_frame Object
+(
+    [fd] => 161
+    [finish] => 1
+    [opcode] => 1
+    [data] => 333
+)
+swoole_websocket_frame Object
+(
+    [fd] => 161
+    [finish] => 1
+    [opcode] => 1
+    [data] => 3333
+)
+swoole_websocket_frame Object
+(
+    [fd] => 161
+    [finish] => 1
+    [opcode] => 1
+    [data] => 3333
+)
+swoole_websocket_frame Object
+(
+    [fd] => 161
+    [finish] => 1
+    [opcode] => 1
+    [data] => 333333333
+)
+client 161 closed
+ 成功连接websocket服务 162
+swoole_websocket_frame Object
+(
+    [fd] => 162
+    [finish] => 1
+    [opcode] => 1
+    [data] => test
+)
