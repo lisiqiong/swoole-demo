@@ -1,0 +1,118 @@
+成功连接websocket服务 1
+成功连接websocket服务 2
+/data/swoole-demo/chatroom/lib/dispatcher.php:12:
+class swoole_websocket_frame#6 (4) {
+  public $fd =>
+  int(1)
+  public $finish =>
+  bool(true)
+  public $opcode =>
+  int(1)
+  public $data =>
+  string(60) "{"chattype":"publicchat","chatto":"1","chatmsg":"顶顶顶"}"
+}
+/data/swoole-demo/chatroom/lib/dispatcher.php:12:
+class swoole_websocket_frame#6 (4) {
+  public $fd =>
+  int(2)
+  public $finish =>
+  bool(true)
+  public $opcode =>
+  int(1)
+  public $data =>
+  string(60) "{"chattype":"publicchat","chatto":"1","chatmsg":"呃呃呃"}"
+}
+成功连接websocket服务 3
+/data/swoole-demo/chatroom/lib/dispatcher.php:12:
+class swoole_websocket_frame#5 (4) {
+  public $fd =>
+  int(3)
+  public $finish =>
+  bool(true)
+  public $opcode =>
+  int(1)
+  public $data =>
+  string(69) "{"chattype":"publicchat","chatto":"1","chatmsg":"帅哥我来了哦"}"
+}
+/data/swoole-demo/chatroom/lib/dispatcher.php:12:
+class swoole_websocket_frame#5 (4) {
+  public $fd =>
+  int(1)
+  public $finish =>
+  bool(true)
+  public $opcode =>
+  int(1)
+  public $data =>
+  string(55) "{"chattype":"publicchat","chatto":"1","chatmsg":"3333"}"
+}
+/data/swoole-demo/chatroom/lib/dispatcher.php:12:
+class swoole_websocket_frame#5 (4) {
+  public $fd =>
+  int(1)
+  public $finish =>
+  bool(true)
+  public $opcode =>
+  int(1)
+  public $data =>
+  string(57) "{"chattype":"publicchat","chatto":"1","chatmsg":"232323"}"
+}
+client 1 closed
+ [2018-08-04 09:57:11 *18193.1]	NOTICE	swFactoryProcess_finish (ERROR 1004): send 32 byte failed, because connection[fd=1] is closed.
+成功连接websocket服务 4
+client 2 closed
+ [2018-08-04 09:57:12 *18192.0]	NOTICE	swFactoryProcess_finish (ERROR 1004): send 32 byte failed, because connection[fd=2] is closed.
+成功连接websocket服务 5
+client 3 closed
+ [2018-08-04 09:57:14 *18193.1]	NOTICE	swFactoryProcess_finish (ERROR 1004): send 32 byte failed, because connection[fd=3] is closed.
+成功连接websocket服务 6
+/data/swoole-demo/chatroom/lib/dispatcher.php:12:
+class swoole_websocket_frame#5 (4) {
+  public $fd =>
+  int(6)
+  public $finish =>
+  bool(true)
+  public $opcode =>
+  int(1)
+  public $data =>
+  string(55) "{"chattype":"privatechat","chatto":"2","chatmsg":"333"}"
+}
+/data/swoole-demo/chatroom/lib/dispatcher.php:12:
+class swoole_websocket_frame#5 (4) {
+  public $fd =>
+  int(6)
+  public $finish =>
+  bool(true)
+  public $opcode =>
+  int(1)
+  public $data =>
+  string(54) "{"chattype":"privatechat","chatto":"2","chatmsg":"33"}"
+}
+client 4 closed
+ [2018-08-04 09:58:30 *18193.1]	NOTICE	swFactoryProcess_finish (ERROR 1004): send 32 byte failed, because connection[fd=4] is closed.
+成功连接websocket服务 7
+client 5 closed
+ [2018-08-04 09:58:31 *18192.0]	NOTICE	swFactoryProcess_finish (ERROR 1004): send 32 byte failed, because connection[fd=5] is closed.
+成功连接websocket服务 8
+client 6 closed
+ [2018-08-04 09:58:34 *18193.1]	NOTICE	swFactoryProcess_finish (ERROR 1004): send 32 byte failed, because connection[fd=6] is closed.
+成功连接websocket服务 9
+/data/swoole-demo/chatroom/lib/dispatcher.php:12:
+class swoole_websocket_frame#5 (4) {
+  public $fd =>
+  int(9)
+  public $finish =>
+  bool(true)
+  public $opcode =>
+  int(1)
+  public $data =>
+  string(53) "{"chattype":"publicchat","chatto":"1","chatmsg":"33"}"
+}
+client 8 closed
+ [2018-08-04 09:58:39 *18192.0]	NOTICE	swFactoryProcess_finish (ERROR 1004): send 32 byte failed, because connection[fd=8] is closed.
+成功连接websocket服务 10
+client 7 closed
+ [2018-08-04 09:58:40 *18193.1]	NOTICE	swFactoryProcess_finish (ERROR 1004): send 32 byte failed, because connection[fd=7] is closed.
+成功连接websocket服务 11
+client 9 closed
+ [2018-08-04 09:58:43 *18193.1]	NOTICE	swFactoryProcess_finish (ERROR 1004): send 32 byte failed, because connection[fd=9] is closed.
+成功连接websocket服务 12
