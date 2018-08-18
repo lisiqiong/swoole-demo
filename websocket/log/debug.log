@@ -1477,3 +1477,149 @@ swoole_websocket_frame Object
     [data] => test
 )
 [2018-08-04 10:09:45 #6961.2]	NOTICE	Server is shutdown now.
+成功连接websocket服务 1
+client 1 closed
+ 成功连接websocket服务 2
+
+Fatal error: Swoole\Table::get(): the swoole table does not exist. in /data/swoole-demo/websocket/chatroom/ws.php on line 46
+[2018-08-13 16:10:53 *10669.1]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Swoole\Table::get(): the swoole table does not exist. in /data/swoole-demo/websocket/chatroom/ws.php on line 46.
+[2018-08-13 16:10:53 $10656.0]	WARNING	swManager_check_exit_status: worker#1 abnormal exit, status=255, signal=0
+client 2 closed
+ 成功连接websocket服务 3
+client 3 closed
+ 成功连接websocket服务 4
+client 4 closed
+ 成功连接websocket服务 5
+client 5 closed
+ 成功连接websocket服务 6
+client 6 closed
+ 成功连接websocket服务 7
+client 7 closed
+ 成功连接websocket服务 8
+client 8 closed
+ 成功连接websocket服务 9
+
+Fatal error: Swoole\Table::get(): the swoole table does not exist. in /data/swoole-demo/websocket/chatroom/ws.php on line 46
+[2018-08-13 16:11:08 *10732.1]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Swoole\Table::get(): the swoole table does not exist. in /data/swoole-demo/websocket/chatroom/ws.php on line 46.
+[2018-08-13 16:11:08 $10656.0]	WARNING	swManager_check_exit_status: worker#1 abnormal exit, status=255, signal=0
+client 9 closed
+ 成功连接websocket服务 10
+
+Fatal error: Swoole\Table::get(): the swoole table does not exist. in /data/swoole-demo/websocket/chatroom/ws.php on line 46
+[2018-08-13 16:12:07 *10733.1]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Swoole\Table::get(): the swoole table does not exist. in /data/swoole-demo/websocket/chatroom/ws.php on line 46.
+[2018-08-13 16:12:07 $10656.0]	WARNING	swManager_check_exit_status: worker#1 abnormal exit, status=255, signal=0
+client 10 closed
+ 成功连接websocket服务 11
+client 11 closed
+ 成功连接websocket服务 12
+client 12 closed
+ 成功连接websocket服务 13
+client 13 closed
+ 成功连接websocket服务 14
+client 14 closed
+ 成功连接websocket服务 15
+client 15 closed
+ 成功连接websocket服务 16
+[2018-08-13 16:15:08 #10655.2]	NOTICE	Server is shutdown now.
+Array
+(
+    [id] => 1
+)
+成功连接websocket服务 1
+client 1 closed
+ Array
+(
+    [id] => 2
+)
+成功连接websocket服务 2
+client 2 closed
+ Array
+(
+    [id] => 3
+)
+成功连接websocket服务 3
+client 3 closed
+ Array
+(
+    [id] => 4
+)
+成功连接websocket服务 4
+client 4 closed
+ Array
+(
+    [id] => 5
+)
+成功连接websocket服务 5
+client 5 closed
+ Array
+(
+    [id] => 6
+)
+成功连接websocket服务 6
+client 6 closed
+ Array
+(
+    [id] => 7
+)
+成功连接websocket服务 7
+client 7 closed
+ Array
+(
+    [id] => 8
+)
+成功连接websocket服务 8
+client 8 closed
+ Array
+(
+    [id] => 9
+)
+成功连接websocket服务 9
+client 9 closed
+ Array
+(
+    [id] => 10
+)
+成功连接websocket服务 10
+
+Fatal error: Swoole\Table::get(): the swoole table does not exist. in /data/swoole-demo/websocket/chatroom/ws.php on line 49
+[2018-08-13 16:16:15 *10881.1]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Swoole\Table::get(): the swoole table does not exist. in /data/swoole-demo/websocket/chatroom/ws.php on line 49.
+[2018-08-13 16:16:15 $10868.0]	WARNING	swManager_check_exit_status: worker#1 abnormal exit, status=255, signal=0
+[2018-08-13 16:18:38 #10867.2]	NOTICE	Server is shutdown now.
+Array
+(
+    [id] => 1
+)
+成功连接websocket服务 1
+
+Notice: Undefined variable: request in /data/swoole-demo/websocket/chatroom/ws.php on line 50
+
+Notice: Trying to get property of non-object in /data/swoole-demo/websocket/chatroom/ws.php on line 50
+Array
+(
+    [id] => 0
+)
+Swoole\WebSocket\Frame Object
+(
+    [fd] => 1
+    [finish] => 1
+    [opcode] => 1
+    [data] => {"chattype":"publicchat","chatto":"1","chatmsg":"第三段"}
+)
+[2018-08-13 16:19:47 #10904.2]	NOTICE	Server is shutdown now.
+Array
+(
+    [id] => 1
+)
+成功连接websocket服务 1
+Array
+(
+    [id] => 1
+)
+Swoole\WebSocket\Frame Object
+(
+    [fd] => 1
+    [finish] => 1
+    [opcode] => 1
+    [data] => {"chattype":"publicchat","chatto":"1","chatmsg":"阿达飞洒"}
+)
+[2018-08-13 16:49:13 #10940.2]	NOTICE	Server is shutdown now.

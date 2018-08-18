@@ -28,6 +28,7 @@ class ws{
         ]);
 
 
+
         //$this->_ws = new swoole_websocket_server($config['websocket']['host'],$config['websocket']['port']);
         $this->_ws = $this->http_server->addListener($config['websocket']['host'],$config['websocket']['port'],SWOOLE_SOCK_TCP);
         
@@ -41,6 +42,7 @@ class ws{
         $this->_ws->on('message',array($this,'onMessage'));
         $this->_ws->on('close',array($this,'onClose'));
         $this->_ws->start();
+        $this->http_server->start();
     }
     
     public function onrequest($request,$response){
