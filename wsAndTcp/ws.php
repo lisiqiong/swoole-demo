@@ -33,31 +33,39 @@ class Ws
         $this->ws->on("start", [$this, 'onStart']);
         $this->ws->on("workerstart",[$this,'onworkerstart']);
         $this->ws->on('open',[$this,'onopen']);
-        $this->server->on("receive", [$this, 'onReceive']);
+        $this->server->on('connect',[$this,'onTcpConnect']);
+        $this->server->on("receive", [$this, 'onTcpReceive']);
         $this->ws->on('task',[$this,'onTask']);
         $this->ws->on('finish',[$this,'onFinish']);
         $this->ws->on('message',[$this,'onmessage']);
         $this->ws->on('close',[$this,'onclose']);
-        $this->server->on("close", [$this, 'onclose']);
+        $this->server->on("close", [$this, 'onTcpclose']);
         $this->ws->start();
     }
 
+    /**
+     *@desc 连接
+     **/
+    public function onTcpConnect($serv,$fd){
+        echo " tcp client 连接  fd is :{$fd}".PHP_EOL;
+    }
+
     //监听数据接收事件
-    public function onReceive($serv, $fd, $from_id, $data)
+    public function onTcpReceive($serv, $fd, $from_id, $data)
     {
         $shuju=json_decode($data,true);
         print_r($shuju).PHP_EOL;
         $key = Predis::getInstance()->get('fd');
         echo "key---{$key}";
-        $this->ws->push($key, $data);
-        if (empty($shuju['data'])) {
-            //$this->ws->push(Predis::getInstance()->get('fd'), $data);
-            $this->ws->push($fd,$data);
-        }else{
-            //执行异步任务
-            $this->ws->task($shuju);
-            // $this->ws->push(Predis::getInstance()->get('fd'), '异步任务开始了');
-        }
+        $this->ws->send($key, $data);
+       /// if (empty($shuju['data'])) {
+       ///     //$this->ws->push(Predis::getInstance()->get('fd'), $data);
+       ///     $this->ws->push($fd,$data);
+       /// }else{
+       ///     //执行异步任务
+       ///     $this->ws->task($shuju);
+       ///     // $this->ws->push(Predis::getInstance()->get('fd'), '异步任务开始了');
+       /// }
     }
 
     /**
@@ -95,7 +103,11 @@ class Ws
      */
     public function onclose($ser, $fd)
     {
-        echo "关闭的fd:{$fd}".PHP_EOL;
+        echo " websocket  关闭的fd:{$fd}".PHP_EOL;
+    }
+
+    public function onTcpClose($serv,$fd){
+        echo " tcp client fd {$fd} is close ".PHP_EOL;
     }
 
     /**

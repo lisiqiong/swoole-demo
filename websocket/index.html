@@ -23,13 +23,13 @@ ul li a:active {text-decoration:underline;}
 </body>
 <script>
     var showList = document.getElementById("showList");
-    var wsServer = 'ws://192.168.0.213:9502';
+    var wsServer = 'ws://192.168.0.213:51005';
     var websocket = new WebSocket(wsServer);
     //onopen监听连接打开
     websocket.onopen = function (evt) {
         //websocket.readyState 属性：
         websocket.readyState;
-        websocket.send('test');
+        //websocket.send('test33333');
 		//msg.innerHTML = websocket.readyState;
     };
 	
@@ -47,14 +47,17 @@ ul li a:active {text-decoration:underline;}
 		
     //onmessage 监听服务器数据推送
     websocket.onmessage = function (evt) {
-		console.log('服务器数据推送');
-		var htmlStr = '';
+		console.log('服务器数据推送'+evt.data);
+        var htmlStr = '';
+		/*var htmlStr = '';
 		var jsonObj = JSON.parse(evt.data);
         var len = jsonObj.length;
 		for(var i=0;i<len;i++){
 			htmlStr += '<li><a href="#">'+jsonObj[i]['name']+'</a><span>'+jsonObj[i]['create_time']+'</span></li>';
 	   	}
-		showList.innerHTML = htmlStr;
+		showList.innerHTML = htmlStr;*/
+        htmlStr = evt.data;
+        showList.innerHTML = htmlStr;
     };
 	
     //监听连接错误信息

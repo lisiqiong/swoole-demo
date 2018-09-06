@@ -13,9 +13,10 @@ if (!$client->connect($host, $port))
 }
 
 
-$sendData = ['data'=>'test'];
+//$sendData = ['data'=>'test'];
+$sendData  = 'test send data';
 //向服务器发送数据
-if (!$client->send(json_encode($sendData)))
+if (!$client->send($sendData))
 {
         die("send failed.");
 }
@@ -23,5 +24,5 @@ if (!$client->send(json_encode($sendData)))
 
 //从服务器接收数据
 //关闭连接
-$client->close();
+//$client->close();
 
